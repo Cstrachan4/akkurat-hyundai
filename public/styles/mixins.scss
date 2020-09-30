@@ -1,0 +1,5 @@
+@mixin grid-base() {
+	display: grid;
+    grid-gap: 0 $d-grid-gutter;
+    grid-template-columns: repeat(12, 1fr);
+}

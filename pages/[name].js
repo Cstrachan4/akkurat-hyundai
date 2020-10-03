@@ -61,7 +61,7 @@ function NamedPage({
                   {i === 1 &&
                     <Button label="SEE AMBER’S PORTFOLIO" href="https://akkurat.tv/directors/amber-grace-johnson" target="_blank"/>
                   }
-                  <InsetImage imageSrc={`assets/images/amber/${image}`} portrait={i === 1} />
+                  <InsetImage imageSrc={`assets/images/amber/${image}`} portrait={i === 0} />
                 </React.Fragment>
               )
             })}

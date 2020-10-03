@@ -2,6 +2,8 @@
 
 .slideshow {
   position: relative;
+  width: 100%;
+  padding: 0 36px;
 }
 
 .slideshow__image {
@@ -14,6 +16,12 @@
   width: 900px;
   transform: translate(-50%,-50%);
   overflow: hidden;
+  @include media('<=images'){
+    width: calc(100% - 72px);
+
+    height: auto;
+    padding-top: 62.41%;
+  }
 	&--active {
 		opacity: 1;
 	}

@@ -1,0 +1,37 @@
+@import 'styles/lib.scss';
+
+.inset-image {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  > img {
+    width: 900px;
+    height: auto;
+  }
+  & + & {
+    margin-top: 40vh;
+  }
+}
+
+.inset-image--portrait {
+  img {
+    height: 100%;
+  }
+}
+
+.inset-image__image {
+  height: 589.79px;
+  width: 900px;
+  position: relative;
+  overflow: hidden;
+  > img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: auto;
+    height: 102%;
+    display: block;
+  }
+}

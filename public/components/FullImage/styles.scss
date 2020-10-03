@@ -1,0 +1,36 @@
+@import 'styles/lib.scss';
+
+.full-image {
+  width: 100%;
+  background-color: map-deep-get($colours,'bg-dark');
+  position: relative;
+  overflow: hidden;
+  position: sticky;
+  top: 0;
+  z-index: 0;
+  > div {
+
+    @media (min-aspect-ratio: 16/9 ) {
+      width: 100vw;
+      height: 56.25vw;
+    }
+    @media (max-aspect-ratio: 16/9 ) {
+      height: 100vh;
+      width: 177.77777778vh;
+    }
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    > img {
+      min-height: 100%;
+      width: 100%;
+      height: auto;
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      object-fit: cover;
+    }
+  }
+}

@@ -1,2 +1,56 @@
-@import './globals.scss';
+@mixin t-primary {
+  font-family:  map-deep-get($fonts, 'primary'),
+                nth(map-deep-get($fonts, 'serif-fallback'), 1),
+                nth(map-deep-get($fonts, 'serif-fallback'), 2),
+                nth(map-deep-get($fonts, 'serif-fallback'), 3);
+}
 
+@mixin t-secondary {
+  font-family:  map-deep-get($fonts, 'secondary'),
+                nth(map-deep-get($fonts, 'sans-fallback'), 1),
+                nth(map-deep-get($fonts, 'sans-fallback'), 2),
+                nth(map-deep-get($fonts, 'sans-fallback'), 3);
+}
+
+@mixin f-main {
+  @include t-primary;
+  font-size: 40px;
+  @include media('<=typemin'){
+    font-size: 30px;
+  }
+}
+
+@mixin f-small {
+  @include t-secondary;
+  font-size: 10px;
+  @include media('<=typemin'){
+    font-size: 12px;
+  }
+}
+
+
+
+
+@mixin f-main-res {
+  @include t-primary;
+  font-size: 2.77vw;
+  @include media('<=typemin'){
+    font-size: 30px;
+  }
+  @include media('>=typemax'){
+    font-size: 54px;
+  }
+
+}
+
+@mixin f-small-res {
+  @include t-secondary;
+  font-size: 0.69vw;
+  @include media('<=typeminsmall'){
+    font-size: 12px;
+  }
+  @include media('>=typemax'){
+    font-size: 13.25px;
+  }
+
+}

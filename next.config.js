@@ -1,6 +1,7 @@
 const autoprefixer = require('autoprefixer');
 const withSass = require('@zeit/next-sass');
 const withCSS = require('@zeit/next-css');
+const withImages = require('next-images');
 const path = require('path');
 const merge = require('webpack-merge');
 

@@ -1,0 +1,24 @@
+@import 'styles/lib.scss';
+
+.intro {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  padding: 10vw;
+  @include f-main;
+  color: map-deep-get($colours,'text-dark');
+  background-color: map-deep-get($colours,'bg-light');
+  > div > div {
+    @include media('<=typemin'){
+      display: inline;
+      align-self:flex-start;
+      flex-shrink: 0;
+    }
+  }
+}
+
+.intro__text-one {
+  text-transform: capitalize;
+}
+

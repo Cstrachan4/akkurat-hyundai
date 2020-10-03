@@ -1,0 +1,25 @@
+@import 'styles/lib.scss';
+
+.button {
+  position: sticky;
+  top: 100vh;
+  z-index: 3;
+}
+
+.button__link-container {
+  position: absolute;
+  height: calc((100vh - 589.79px)/2);
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.button__link {
+  @include f-small;
+  text-transform: uppercase;
+  text-align: center;
+  color: map-deep-get($colours,'text-light');
+  text-decoration: none;
+}

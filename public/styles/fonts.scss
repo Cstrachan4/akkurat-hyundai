@@ -1,9 +1,16 @@
 @font-face {
-    font-family: 'Example';
-    src: url('/fonts/Example.eot');
-    src: url('/fonts/Example.eot?#iefix') format('embedded-opentype'),
-        url('/fonts/Example.woff2') format('woff2'),
-        url('/fonts/Example.woff') format('woff');
-    font-weight: bold;
+    font-family: 'GT America';
+    src: url('/fonts/GTAmerica-Medium.woff2') format('woff2'),
+        url('/fonts/GTAmerica-Medium.woff') format('woff');
+    font-weight: 500;
     font-style: normal;
 }
+
+@font-face {
+    font-family: 'ITC Cheltenham Std';
+    src: url('/fonts/CheltenhamStd-Book.woff2') format('woff2'),
+        url('/fonts/CheltenhamStd-Book.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+

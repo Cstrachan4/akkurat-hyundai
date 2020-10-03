@@ -1,0 +1,20 @@
+html,
+body,
+#__next {
+  background-color: map-deep-get($colours,'bg-dark');
+}
+
+.section--bts {
+  background-color: map-deep-get($colours,'bg-dark');
+}
+
+.section--paper {
+  background-color: map-deep-get($colours,'akkurat-blue');
+}
+
+.inset-images {
+  position: relative;
+  z-index: 2;
+  background-color: map-deep-get($colours,'bg-dark');
+  padding-top: 20vh;
+}

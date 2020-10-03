@@ -2,13 +2,15 @@ import React from 'react';
 import './styles.scss';
 import clsx from 'clsx';
 
-export default function Component({ 
+import Div100vh from 'react-div-100vh';
+
+export default function Component({
 
 }) {
- 
+
   return (
-    <div className={clsx('component')}>
+    <Div100vh className={clsx('component')}>
      	Example
-    </div>
+    </Div100vh>
   )
 }

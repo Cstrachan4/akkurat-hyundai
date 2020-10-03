@@ -1,0 +1,22 @@
+@import 'styles/lib.scss';
+
+.text {
+  padding: 10vw;
+  @include f-main;
+  color: map-deep-get($colours,'text-light');
+  position: relative;
+  z-index: 2;
+  &--left {
+    text-align: left;
+  }
+  &--right {
+    text-align: right;
+  }
+  > div > div {
+    @include media('<=typemin'){
+      display: inline;
+      align-self:flex-start;
+      flex-shrink: 0;
+    }
+  }
+}

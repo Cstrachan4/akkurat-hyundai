@@ -1,0 +1,9 @@
+@import 'styles/lib.scss';
+
+.logo-end {
+  width: 100%;
+  background-color: map-deep-get($colours, 'akkurat-blue');
+  display:flex;
+  justify-content: center;
+  align-items: center;
+}

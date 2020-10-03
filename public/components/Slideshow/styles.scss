@@ -1,0 +1,34 @@
+@import '../../styles/styles.scss';
+
+.slideshow {
+  position: relative;
+}
+
+.slideshow__image {
+	text-align: center;
+	opacity: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  height: 589.79px;
+  width: 900px;
+  transform: translate(-50%,-50%);
+  overflow: hidden;
+	&--active {
+		opacity: 1;
+	}
+	img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: auto;
+    height: 100%;
+    display: block;
+  }
+}
+
+@keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}

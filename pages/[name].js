@@ -70,7 +70,9 @@ function NamedPage({
 	  	  <LogoStart />
         <Intro name={name} />
         <div className="section section--intro">
-          <ParallaxVideo />
+          <ParallaxVideo
+            videoUrl="assets/video/Preview.mp4"
+          />
           <Text lineOne="Six shooting days during COVID-19 Kiev, " lineTwo="remote Kenya, here we go!" align="left"/>
           <Text lineOne="In collaboration with Jung Von Matt × Hyundai " lineTwo="and Director, Amber Grace Johnson." align="right"/>
           <Div100vh style={{width:'100%'}}/>

@@ -1,7 +1,7 @@
 @import 'styles/lib.scss';
 
 .text {
-  padding: 10vw;
+  padding: 0 10vw;
   @include f-main;
   color: map-deep-get($colours,'text-light');
   position: relative;

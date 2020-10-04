@@ -10,11 +10,17 @@ body,
 
 .section--paper {
   background-color: map-deep-get($colours,'akkurat-blue');
+  opacity: 0;
+  transition: opacity 1s $t-bezier;
+}
+
+.section--display {
+  opacity: 1;
 }
 
 .inset-images {
   position: relative;
   z-index: 2;
-  background-color: map-deep-get($colours,'bg-dark');
+  // background-color: map-deep-get($colours,'bg-dark');
   padding-top: 20vh;
 }

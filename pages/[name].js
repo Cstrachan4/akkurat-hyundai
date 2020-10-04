@@ -2,7 +2,9 @@ import Link from "next/link";
 import { connect, useSelector, useDispatch } from "react-redux";
 import { useViewportScroll, motion, useTransform, useMotionValue } from "framer-motion";
 import * as indexActions from '../store/index/actions.js';
+import clsx from "clsx";
 
+import { Waypoint } from 'react-waypoint';
 import HeadMeta from 'components/HeadMeta';
 import LogoStart from 'components/LogoStart';
 import LogoEnd from 'components/LogoEnd';
@@ -25,9 +27,41 @@ function NamedPage({
   const { index } = useSelector(state => state);
   const dispatch = useDispatch();
 
+  const { amber, paper } = index;
+
+  const onIndexChange = (key, value) => dispatch(indexActions.updateIndex(key, value));
+
   const { scrollY } = useViewportScroll();
   const y1 = useTransform(scrollY, [0, 300], [0, 200]);
   const y2 = useTransform(scrollY, [0, 300], [0, -100]);
+
+  const onAmberHeroEnter = ({ previousPosition, currentPosition }) => {
+    onIndexChange('amber', {
+      ...amber,
+      displayHero: true
+    })
+  }
+  const onAmberHeroExit = ({ previousPosition, currentPosition }) => {
+    onIndexChange('amber', {
+      ...amber,
+      displayHero: false
+    })
+  }
+  const onPaperEnter = ({ previousPosition, currentPosition }) => {
+    onIndexChange('paper', {
+      ...paper,
+      display: true
+    })
+  }
+  const onPaperExit = ({ previousPosition, currentPosition }) => {
+    if(previousPosition === 'inside' && currentPosition === 'above') {
+      return;
+    }
+    onIndexChange('paper', {
+      ...paper,
+      display: false
+    })
+  }
 
   return (
   	<React.Fragment>
@@ -52,8 +86,10 @@ function NamedPage({
           </div>
         </div>
         <div className="section section--amber">
-          <FullImage imageSrc='assets/images/amber/amber_grace_johnson_cover.jpg' />
+          <FullImage imageSrc='assets/images/amber/amber_grace_johnson_cover.jpg' inView={amber.displayHero} />
+          <Waypoint onEnter={onAmberHeroEnter} onLeave={onAmberHeroExit} />
           <Text lineOne="We’re also happy to announce that Amber is now" lineTwo="exclusive with us for the German Market." align="left"/>
+          <Waypoint onEnter={onAmberHeroExit} />
           <div className="inset-images">
             {AMBER_IMAGES.map((image,i)=>{
               return(
@@ -67,8 +103,12 @@ function NamedPage({
             })}
           </div>
         </div>
-        <div className="section section--paper">
+        <div className={clsx(
+          "section section--paper",
+          paper.display && "section--display"
+        )}>
           <Div100vh style={{width:'100%'}}/>
+          <Waypoint onEnter={onPaperEnter} onLeave={onPaperExit} />
           <Slideshow images={PAPER_IMAGES} pathStart="assets/images/paper/" />
           <Button label="DOWNLOAD PDF" target="_blank"/>
         </div>

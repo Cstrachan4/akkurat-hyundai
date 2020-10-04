@@ -5,11 +5,13 @@ import clsx from 'clsx';
 import Div100vh from 'react-div-100vh';
 
 export default function FullImage({
-  imageSrc
+  imageSrc,
+  inView
 }) {
   return (
     <Div100vh className={clsx(
-      'full-image'
+      'full-image',
+      inView && 'full-image--display'
     )}>
       <div>
      	{imageSrc ?

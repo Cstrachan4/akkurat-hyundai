@@ -3,11 +3,15 @@
 .full-image {
   width: 100%;
   background-color: map-deep-get($colours,'bg-dark');
-  position: relative;
   overflow: hidden;
   position: sticky;
   top: 0;
   z-index: 0;
+  opacity: 0;
+  transition: opacity 1s $t-bezier;
+  &--display {
+    opacity: 1;
+  }
   > div {
     @media (min-aspect-ratio: 16/9 ) {
       width: 100vw;

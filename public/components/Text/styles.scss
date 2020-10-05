@@ -6,6 +6,11 @@
   color: map-deep-get($colours,'text-light');
   position: relative;
   z-index: 2;
+  opacity: 0;
+  transition: opacity .5s $t-bezier;
+  &--display {
+    opacity: 1;
+  }
   &--left {
     text-align: left;
   }

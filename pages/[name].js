@@ -114,7 +114,7 @@ function NamedPage({
           <Slideshow images={PAPER_IMAGES} pathStart="assets/images/paper/" />
           <Button label="DOWNLOAD PDF" target="_blank"/>
         </div>
-
+        <LogoEnd />
       </motion.div>
   	</React.Fragment>
   )

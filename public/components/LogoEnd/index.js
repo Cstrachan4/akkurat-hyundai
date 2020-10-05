@@ -11,8 +11,11 @@ export default function LogoEnd({
 }) {
 
   return (
+    <>
     <Div100vh className={clsx('logo-end')}>
       <Logo />
     </Div100vh>
+    <Button label="Replay"/>
+    </>
   )
 }

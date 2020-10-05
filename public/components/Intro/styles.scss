@@ -9,6 +9,7 @@
   @include f-main;
   color: map-deep-get($colours,'text-dark');
   background-color: map-deep-get($colours,'bg-light');
+  transition: height .5s $t-bezier;
   > div > div {
     @include media('<=typemin'){
       display: inline;
@@ -22,3 +23,10 @@
   text-transform: capitalize;
 }
 
+.intro__text-two {
+  opacity: 0;
+  transition: opacity .5s $t-bezier;
+  &--display {
+    opacity: 1;
+  }
+}

@@ -1,25 +1,38 @@
-import React from 'react';
+import React, {useEffect,useState} from 'react';
 import './styles.scss';
 import clsx from 'clsx';
 
-import Div100vh from 'react-div-100vh';
+import { use100vh } from 'react-div-100vh';
 
 export default function Intro({
   name
 }) {
-
+  const [initial,setInitial] = useState(true);
+  const displayName =  name  ? name.replace("-", ' '): null;
+  const height = use100vh();
+  useEffect(()=>{
+    setTimeout(()=>{
+      setInitial(false);
+    },3250);
+  },[]);
   return (
-    <Div100vh className={clsx('intro')}>
+    <div
+      className={clsx('intro')}
+      style={{height: initial ? height : height - 54}}
+    >
       <div>
        	<div className="intro__text-one">
           {
-            name ? `Hey, ${name}! ` : 'Hey! '
+            displayName ? `Hey, ${displayName}! ` : 'Hey, all! '
           }
         </div>
-        <div className="intro__text-two">
-          We'd like to show you something new.
+        <div className={clsx(
+          "intro__text-two",
+          !initial && 'intro__text-two--display'
+        )}>
+          We’d like to show you something new…
         </div>
       </div>
-    </Div100vh>
+    </div>
   )
 }

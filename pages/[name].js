@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { useRouter } from 'next/router'
 import { connect, useSelector, useDispatch } from "react-redux";
 import { useViewportScroll, motion, useTransform, useMotionValue } from "framer-motion";
 import * as indexActions from '../store/index/actions.js';
@@ -21,9 +22,10 @@ import { BTS_IMAGES, AMBER_IMAGES, PAPER_IMAGES } from 'lib/content.js';
 import { fadeIn } from 'lib/animations.js';
 import 'lib/styles.js';
 
-function NamedPage({
-  name
-}) {
+function NamedPage() {
+
+  const router = useRouter();
+  const { name } = router.query;
   const { index } = useSelector(state => state);
   const dispatch = useDispatch();
 
@@ -118,14 +120,6 @@ function NamedPage({
       </motion.div>
   	</React.Fragment>
   )
-}
-
-NamedPage.getInitialProps = async function (context) {
-  // It's important to default the slug so that it doesn't return "undefined"
-  const { name } = context.query;
-  return {
-    name
-  };
 }
 
 export default connect(state => state)(NamedPage);

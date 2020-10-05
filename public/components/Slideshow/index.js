@@ -22,11 +22,13 @@ export default function Slideshow({
 
   return (
     <Div100vh className={clsx('slideshow')}>
+      <div className="slideshow__images">
      	{images.map((image,i)=>{
      		return (
      			<Slide key={i} image={image} pathStart={pathStart} active={i === activeSlide} />
      		)
      	})}
+      </div>
     </Div100vh>
   )
 }

@@ -6,6 +6,9 @@ const INITIAL_STATE = {
   },
   paper: {
     display: false
+  },
+  logo: {
+    display:false
   }
 };
 

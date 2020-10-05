@@ -4,6 +4,7 @@
   position: sticky;
   top: 100vh;
   z-index: 3;
+  transition: opacity .5s $t-bezier;
 }
 
 .button__link-container {

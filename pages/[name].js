@@ -29,7 +29,7 @@ function NamedPage() {
   const { index } = useSelector(state => state);
   const dispatch = useDispatch();
 
-  const { amber, paper } = index;
+  const { amber, paper, logo } = index;
 
   const onIndexChange = (key, value) => dispatch(indexActions.updateIndex(key, value));
 
@@ -47,6 +47,18 @@ function NamedPage() {
     onIndexChange('amber', {
       ...amber,
       displayHero: false
+    })
+  }
+  const onLogoEnter = ({ previousPosition, currentPosition }) => {
+    onIndexChange('logo', {
+      ...logo,
+      display: true
+    })
+  }
+  const onLogoExit = ({ previousPosition, currentPosition }) => {
+    onIndexChange('logo', {
+      ...logo,
+      display: false
     })
   }
   const onPaperEnter = ({ previousPosition, currentPosition }) => {
@@ -75,8 +87,8 @@ function NamedPage() {
           <ParallaxVideo
             videoUrl="assets/video/Preview.mp4"
           />
-          <Text lineOne="Six shooting days during COVID-19 Kiev, " lineTwo="remote Kenya, here we go!" align="left"/>
-          <Text lineOne="In collaboration with Jung Von Matt × Hyundai " lineTwo="and Director, Amber Grace Johnson." align="right"/>
+          <Text lineOne="In collaboration with Jung von Matt and female " lineTwo="American director Amber Grace Johnson for Hyundai." align="left"/>
+          <Text lineOne="6 shooting days during Covid-19. Production in " lineTwo="Kiev, remote-shoot in Kenya... Here we go!" align="right"/>
           <Div100vh style={{width:'100%'}}/>
           <Button label="SHARE LINK" />
         </div>
@@ -115,8 +127,9 @@ function NamedPage() {
           <Waypoint onEnter={onPaperEnter} onLeave={onPaperExit} />
           <Slideshow images={PAPER_IMAGES} pathStart="assets/images/paper/" />
           <Button label="DOWNLOAD PDF" target="_blank"/>
+          <LogoEnd display={logo.display} />
+          <Waypoint onEnter={onLogoEnter} onLeave={onLogoExit} />
         </div>
-        <LogoEnd />
       </motion.div>
   	</React.Fragment>
   )

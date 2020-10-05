@@ -1,9 +1,5 @@
 import Head from 'next/head'
 
-// import { FavIcon } from '../../public/favicon/favicon'
-// import Gtag from '../Gtag'
-
-
 const HeadMeta = ({title, description}) => {
 
 return(

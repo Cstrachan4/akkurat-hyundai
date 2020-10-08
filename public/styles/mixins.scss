@@ -3,3 +3,9 @@
   grid-gap: 0 $d-grid-gutter;
   grid-template-columns: repeat(12, 1fr);
 }
+
+@mixin font-smoothing($type: antialiased) {
+  $moz-type: if($type == antialiased, grayscale, auto);
+  -moz-osx-font-smoothing: $moz-type;
+  -webkit-font-smoothing: $type;
+}

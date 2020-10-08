@@ -3,6 +3,7 @@
                 nth(map-deep-get($fonts, 'serif-fallback'), 1),
                 nth(map-deep-get($fonts, 'serif-fallback'), 2),
                 nth(map-deep-get($fonts, 'serif-fallback'), 3);
+  @include font-smoothing();
 }
 
 @mixin t-secondary {

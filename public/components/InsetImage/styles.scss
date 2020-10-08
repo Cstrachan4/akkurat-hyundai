@@ -9,6 +9,7 @@
     width: 900px;
     height: auto;
   }
+  .button + & ,
   & + & {
     margin-top: 40vh;
   }

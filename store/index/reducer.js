@@ -1,14 +1,25 @@
 import * as actionTypes from './actionTypes.js';
 
 const INITIAL_STATE = {
+  bts: {
+    displayHero: false
+  },
   amber: {
     displayHero: false
   },
   paper: {
-    display: false
+    display: false,
+    displayHero: false
   },
   logo: {
     display:false
+  },
+  video: {
+    displayPlay: false,
+    controls: false,
+    url: 'assets/video/Preview.mp4',
+    preview: true,
+    muted: true
   }
 };
 

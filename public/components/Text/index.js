@@ -26,7 +26,7 @@ export default function Text({
       )}
     >
       <div>
-        <Waypoint onEnter={onEnter} onLeave={onExit} topOffset="10%"/>
+        <Waypoint onEnter={onEnter} onLeave={onExit} topOffset="10%" bottomOffset="15%"/>
         <div>
        	  {lineOne}
         </div>

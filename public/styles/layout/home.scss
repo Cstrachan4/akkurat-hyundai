@@ -4,18 +4,20 @@ body,
   background-color: map-deep-get($colours,'bg-dark');
 }
 
+.section {
+  // overflow: hidden;
+}
+
 .section--bts {
   background-color: map-deep-get($colours,'bg-dark');
 }
 
 .section--paper {
-  background-color: map-deep-get($colours,'akkurat-blue');
-  opacity: 0;
-  transition: opacity 1s $t-bezier;
+  transition: background 1s $t-bezier;
 }
 
-.section--display {
-  opacity: 1;
+.section--blue {
+  background-color: map-deep-get($colours,'akkurat-blue');
 }
 
 .inset-images {

@@ -1,35 +1,65 @@
 @import 'styles/lib.scss';
 
 .parallax-video {
-  width: 100%;
+  width: 100vw;
   background-color: map-deep-get($colours,'bg-dark');
   position: sticky;
   top: 0;
   z-index: 0;
+  overflow: hidden;
+}
+
+.parallax-video__container {
+  position: absolute;
+  width: 102%;
+  padding-top: 56.25%;
+  margin: 0 auto;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  margin-top: -2px;
 }
 
 
 .parallax-video__video {
-  @media (min-aspect-ratio: 16/9 ) {
-    width: 100vw !important;
-    height: 56.25vw !important;
-  }
-  @media (max-aspect-ratio: 16/9 ) {
-    height: 100vh !important;
-    width: 177.77777778vh !important;
-  }
+  overflow: hidden;
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%,-50%);
-  > img {
-    min-height: 100%;
-    width: 100%;
-    height: auto;
+  > video {
+    // @media (min-aspect-ratio: 16/9 ) {
+    //   width: 100vw !important;
+    //   height: 56.25vw !important;
+    // }
+    // @media (max-aspect-ratio: 16/9 ) {
+    //   height: 100vh !important;
+    //   width: 177.77777778vh !important;
+    // }
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%,-50%);
-    object-fit: cover;
+  }
+}
+
+.parallax-video__play {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  z-index: 3;
+  background-color: transparent;
+  border: none;
+  opacity: 0;
+  transition: opacity .5s $t-bezier;
+  pointer-events: none;
+  &--display {
+    pointer-events: auto;
+    opacity: 1;
+    cursor: pointer;
+  }
+  &:focus {
+    outline: none;
   }
 }

@@ -1,5 +1,5 @@
 export const BTS_IMAGES = [
-  'behind_the_scenes_1.jpg',
+  'behind_the_scenes_1.jpeg',
   'behind_the_scenes_2.jpg',
   'behind_the_scenes_3.jpg'
 ]

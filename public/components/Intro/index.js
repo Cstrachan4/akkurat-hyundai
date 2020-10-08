@@ -13,7 +13,7 @@ export default function Intro({
   useEffect(()=>{
     setTimeout(()=>{
       setInitial(false);
-    },3250);
+    },5250);
   },[]);
   return (
     <div

@@ -11,6 +11,9 @@
 .button__link-container {
   position: absolute;
   height: calc((100vh - 589.79px)/2);
+  @include media('<=typemin'){
+    height: 120px;
+  }
   bottom: 0;
   display: flex;
   justify-content: center;

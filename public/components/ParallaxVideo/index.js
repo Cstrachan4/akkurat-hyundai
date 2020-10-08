@@ -15,12 +15,7 @@ export default function ParallaxVideo({
 }) {
   const videoRef = useRef(null);
   const { displayPlay, url, preview, controls, muted } = video;
-  const onProgress = () => {
 
-  }
-  const onReady = () => {
-
-  }
   const handlePlayClick = () => {
     if(preview) {
       onChange('video', {
@@ -58,9 +53,7 @@ export default function ParallaxVideo({
           volume={1}
           muted={muted}
           autoPlay={true}
-          controls={false}
-          onProgress={onProgress}
-          onReady={onReady}
+          controls={controls}
           width='100%'
           height='100%'
           progressInterval={330}

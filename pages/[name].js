@@ -45,7 +45,7 @@ function NamedPage() {
   const videoWidthBelow = useTransform(scrollY, [videoScrollStart, videoScrollEnd], [viewWidth ? viewWidth : 0, 900]);
   const videoWidthAbove = useTransform(scrollY, [videoScrollStart, videoScrollEnd], [viewHeight? viewHeight * 1.7777777778 : 0, viewWidth > 900 ? 900 : viewWidth  - 72]);
 
-  const videoWidth = aspectRatio > (16/9) ? videoWidthBelow : videoWidthAbove;
+  const videoWidth = aspectRatio < (9/16) ? videoWidthBelow : videoWidthAbove;
 
   const onBtsHeroEnter = () => {
     onIndexChange('bts', {...bts, displayHero: true});

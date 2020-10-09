@@ -124,7 +124,7 @@ function NamedPage() {
         <div className="section section--amber">
           <FullImage imageSrc='assets/images/amber/amber_grace_johnson_hero.jpg' inView={amber.displayHero} />
           <Waypoint onEnter={onAmberHeroEnter} onLeave={onAmberHeroExit} />
-          <Text lineOne="We’re also happy to announce that Amber is now" lineTwo="exclusive with us for the German Market." align="left"/>
+          <Text lineOne="We’re also happy to announce that Amber is now " lineTwo="exclusive with us for the German Market." align="left"/>
           <Waypoint onEnter={onAmberHeroExit} />
           <div className="inset-images">
             {AMBER_IMAGES.map((image,i)=>{

@@ -191,7 +191,7 @@ function NamedPage() {
             pathStart="assets/images/paper/"
             viewHeight={viewHeight}
           />
-          <Button label="DOWNLOAD PDF" target="_blank"/>
+          <Button style={{opacity: logo.display ? 0 : 1}} label="DOWNLOAD PDF" target="_blank"/>
           <LogoEnd display={logo.display} intro={intro} onChange={onIndexChange} viewHeight={viewHeight} />
           <Waypoint onEnter={onLogoEnter} onLeave={onLogoExit} />
           <div style={{height: viewHeight * .1, width:'100%'}}/>

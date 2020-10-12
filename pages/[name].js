@@ -123,6 +123,7 @@ function NamedPage() {
             value="ADD THE VIDEO URL HERE"
             readOnly
           />
+          <div style={{height: viewHeight, width:'100%'}}/>
           <Waypoint onEnter={onPlayEnter} onLeave={onPlayExit} bottomOffset="-200px" />
         </div>
         <div className="section section--bts">

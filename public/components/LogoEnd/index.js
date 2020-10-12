@@ -1,6 +1,7 @@
 import React from 'react';
 import './styles.scss';
 import clsx from 'clsx';
+import easyScroll from 'easy-scroll';
 
 import Div100vh from 'react-div-100vh';
 import Logo from './AKKURAT-studios.svg';
@@ -12,12 +13,13 @@ export default function LogoEnd({
   onChange
 }) {
   const restart = () => {
-    onChange('intro',{...intro, 'initial':true, 'timeout':2000});
+    onChange('intro',{...intro, 'initial':true, 'timeout':2500});
     setTimeout(()=>{
-      window.scrollTo({
-        top: 0,
-        left: 0,
-        behavior: 'smooth'
+      easyScroll({
+        'scrollableDomEle': window,
+        'direction': 'top',
+        'duration': 1000,
+        'easingPreset': 'easeInOutQuad'
       });
     },500);
   }

@@ -8,7 +8,8 @@ import { Waypoint } from 'react-waypoint';
 export default function Text({
   lineOne,
   lineTwo,
-  align
+  align,
+  viewHeight
 }) {
   const [display, setDisplay] = useState(false);
   const onEnter = () => {
@@ -24,6 +25,7 @@ export default function Text({
         align && `text--${align}`,
         display && 'text--display'
       )}
+      style={{height:viewHeight}}
     >
       <div>
         <Waypoint onEnter={onEnter} onLeave={onExit} topOffset="10%" bottomOffset="15%"/>

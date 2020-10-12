@@ -6,14 +6,18 @@ import Div100vh from 'react-div-100vh';
 
 export default function InsetImage({
   imageSrc,
+  viewHeight,
   portrait
 }) {
 
   return (
-    <div className={clsx(
-      'inset-image',
-      portrait && 'inset-image--portrait'
-    )}>
+    <div
+      className={clsx(
+        'inset-image',
+        portrait && 'inset-image--portrait'
+      )}
+      style={{height:viewHeight}}
+    >
      	{imageSrc ?
         <div className={clsx(
           'inset-image__image'

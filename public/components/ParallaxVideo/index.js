@@ -11,7 +11,8 @@ import { motion, useTransform } from 'framer-motion';
 export default function ParallaxVideo({
   video,
   onChange,
-  width
+  width,
+  viewHeight
 }) {
   const videoRef = useRef(null);
   const { displayPlay, url, preview, controls, muted } = video;
@@ -32,7 +33,7 @@ export default function ParallaxVideo({
   const height = width ? useTransform(width, latest => latest * 0.5625) : 0;
 
   return (
-    <div className={clsx('parallax-video')}>
+    <div style={{height:viewHeight}} className={clsx('parallax-video')}>
       <button
         className={clsx(
           'parallax-video__play',

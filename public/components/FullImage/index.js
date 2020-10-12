@@ -6,13 +6,18 @@ import Div100vh from 'react-div-100vh';
 
 export default function FullImage({
   imageSrc,
-  inView
+  inView,
+  viewHeight
 }) {
   return (
-    <div className={clsx(
-      'full-image',
-      inView && 'full-image--display'
-    )}>
+    <div
+
+      className={clsx(
+        'full-image',
+        inView && 'full-image--display'
+      )}
+      style={{height:viewHeight}}
+    >
       <div>
      	{imageSrc ?
         <img src={imageSrc} />

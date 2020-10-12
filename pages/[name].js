@@ -106,15 +106,21 @@ function NamedPage() {
   	<React.Fragment>
 	  	<HeadMeta title="Akkurat x Hyundai" description="xxx" />
       <motion.div initial="hidden" animate="show" exit="hidden" variants={fadeIn}>
-	  	  <LogoStart />
+	  	  <LogoStart viewHeight={viewHeight} />
         <Intro name={name} intro={intro} onChange={onIndexChange} />
         <div className="section section--intro">
           <ParallaxVideo
             video={video}
             onChange={onIndexChange}
             width={videoWidth}
+            viewHeight={viewHeight}
           />
-          <Text lineOne="In collaboration with Jung von Matt and female " lineTwo="American director Amber Grace Johnson for Hyundai." align="left"/>
+          <Text
+            lineOne="In collaboration with Jung von Matt and female "
+            lineTwo="American director Amber Grace Johnson for Hyundai."
+            align="left"
+            viewHeight={viewHeight}
+          />
           <div ref={scrollRef} style={{height: viewHeight, width:'100%'}}/>
           <Button label={clipboard.copied ? 'LINK COPIED' : 'SHARE LINK'} onClick={shareLinkClickHandler} />
           <input
@@ -127,22 +133,32 @@ function NamedPage() {
           <div style={{height: viewHeight, width:'100%'}}/>
         </div>
         <div className="section section--bts">
-          <FullImage imageSrc='assets/images/bts/behind_the_scenes_hero.jpeg' inView={bts.displayHero} />
+          <FullImage imageSrc='assets/images/bts/behind_the_scenes_hero.jpeg' inView={bts.displayHero} viewHeight={viewHeight} />
           <Waypoint onEnter={onBtsHeroEnter} onLeave={onBtsHeroExit} />
-          <Text lineOne="6 shooting days during Covid-19. Production in " lineTwo="Kiev, remote-shoot in Kenya" align="right"/>
+          <Text
+            lineOne="6 shooting days during Covid-19. Production in "
+            lineTwo="Kiev, remote-shoot in Kenya"
+            align="right"
+            viewHeight={viewHeight}
+          />
           <Waypoint onEnter={onBtsHeroExit} />
           <div className="inset-images">
             {BTS_IMAGES.map((image,i)=>{
               return(
-                <InsetImage key={`bts-${i}`} imageSrc={`assets/images/bts/${image}`} />
+                <InsetImage key={`bts-${i}`} imageSrc={`assets/images/bts/${image}`} viewHeight={viewHeight} />
               )
             })}
           </div>
         </div>
         <div className="section section--amber">
-          <FullImage imageSrc='assets/images/amber/amber_grace_johnson_hero.jpg' inView={amber.displayHero} />
+          <FullImage imageSrc='assets/images/amber/amber_grace_johnson_hero.jpg' inView={amber.displayHero} viewHeight={viewHeight} />
           <Waypoint onEnter={onAmberHeroEnter} onLeave={onAmberHeroExit} />
-          <Text lineOne="We’re also happy to announce that Amber is now " lineTwo="exclusive with us for the German Market." align="left"/>
+          <Text
+            lineOne="We’re also happy to announce that Amber is now "
+            lineTwo="exclusive with us for the German Market."
+            align="left"
+            viewHeight={viewHeight}
+          />
           <Waypoint onEnter={onAmberHeroExit} />
           <div className="inset-images">
             {AMBER_IMAGES.map((image,i)=>{
@@ -151,7 +167,7 @@ function NamedPage() {
                   {i === 1 &&
                     <Button label="SEE AMBER’S PORTFOLIO" href="https://akkurat.tv/directors/amber-grace-johnson" target="_blank"/>
                   }
-                  <InsetImage imageSrc={`assets/images/amber/${image}`} portrait={i === 0} />
+                  <InsetImage imageSrc={`assets/images/amber/${image}`} portrait={i === 0} viewHeight={viewHeight} />
                 </React.Fragment>
               )
             })}
@@ -161,13 +177,22 @@ function NamedPage() {
           "section section--paper",
           paper.display && "section--blue"
         )}>
-          <FullImage imageSrc='assets/images/paper/Paper_NEU-hero.jpg' inView={paper.displayHero} />
+          <FullImage imageSrc='assets/images/paper/Paper_NEU-hero.jpg' inView={paper.displayHero} viewHeight={viewHeight} />
           <Waypoint onEnter={onPaperEnter} onLeave={onPaperExit} />
-          <Text lineOne="Lastly, enjoy taking a look at the first " lineTwo="issue of our AKKURAT PAPER." align="left"/>
+          <Text
+            lineOne="Lastly, enjoy taking a look at the first "
+            lineTwo="issue of our AKKURAT PAPER."
+            align="left"
+            viewHeight={viewHeight}
+          />
           <Waypoint onEnter={onPaperHeroExit} />
-          <Slideshow images={PAPER_IMAGES} pathStart="assets/images/paper/" />
+          <Slideshow
+            images={PAPER_IMAGES}
+            pathStart="assets/images/paper/"
+            viewHeight={viewHeight}
+          />
           <Button label="DOWNLOAD PDF" target="_blank"/>
-          <LogoEnd display={logo.display} intro={intro} onChange={onIndexChange} />
+          <LogoEnd display={logo.display} intro={intro} onChange={onIndexChange} viewHeight={viewHeight} />
           <Waypoint onEnter={onLogoEnter} onLeave={onLogoExit} />
           <div style={{height: viewHeight * .1, width:'100%'}}/>
         </div>

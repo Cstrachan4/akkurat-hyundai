@@ -123,8 +123,8 @@ function NamedPage() {
             value="ADD THE VIDEO URL HERE"
             readOnly
           />
-          <div style={{height: viewHeight, width:'100%'}}/>
           <Waypoint onEnter={onPlayEnter} onLeave={onPlayExit} bottomOffset="-200px" />
+          <div style={{height: viewHeight, width:'100%'}}/>
         </div>
         <div className="section section--bts">
           <FullImage imageSrc='assets/images/bts/behind_the_scenes_hero.jpeg' inView={bts.displayHero} />

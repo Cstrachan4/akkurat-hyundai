@@ -20,7 +20,7 @@ export default function ParallaxVideo({
     if(preview) {
       onChange('video', {
         ...video,
-        url:'https://vimeo.com/90509568',
+        url:'assets/video/Full.mp4',
         controls: true,
         muted: false,
         displayPlay: false,

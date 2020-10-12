@@ -13,7 +13,7 @@
 .parallax-video__container {
   position: absolute;
   width: 102%;
-  padding-top: 56.25%;
+  // padding-top: 56.25%;
   margin: 0 auto;
   top: 50%;
   left: 50%;
@@ -41,6 +41,9 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%,-50%);
+    &:focus {
+      outline: none;
+    }
   }
 }
 

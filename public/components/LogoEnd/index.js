@@ -13,7 +13,7 @@ export default function LogoEnd({
   onChange
 }) {
   const restart = () => {
-    onChange('intro',{...intro, 'initial':true, 'timeout':2500});
+    onChange('intro',{...intro, 'initial':true, 'resized': false, 'timeout':2500, 'first':false});
     setTimeout(()=>{
       easyScroll({
         'scrollableDomEle': window,

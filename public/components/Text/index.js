@@ -8,8 +8,8 @@ import { Waypoint } from 'react-waypoint';
 export default function Text({
   lineOne,
   lineTwo,
-  align,
-  viewHeight
+  lineThree,
+  align
 }) {
   const [display, setDisplay] = useState(false);
   const onEnter = () => {
@@ -28,13 +28,21 @@ export default function Text({
     >
       <div>
         <Waypoint onEnter={onEnter} onLeave={onExit} topOffset="10%" bottomOffset="15%"/>
-        <div>
-       	  {lineOne}
-        </div>
-        <div>
-          {lineTwo}
-        </div>
-
+        {lineOne &&
+          <div>
+            {lineOne}
+          </div>
+        }
+        {lineTwo &&
+          <div>
+            {lineTwo}
+          </div>
+        }
+        {lineThree &&
+          <div>
+            {lineThree}
+          </div>
+        }
       </div>
     </div>
   )

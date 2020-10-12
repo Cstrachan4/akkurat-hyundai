@@ -9,18 +9,21 @@ export default function Intro({
   intro,
   onChange
 }) {
-  const { initial, timeout } = intro;
+  const { initial, timeout, resized, first } = intro;
   const displayName =  name  ? name.replace("-", ' '): null;
   const height = use100vh();
   useEffect(()=>{
     setTimeout(()=>{
-      onChange('intro',{...intro, initial:false})
+      onChange('intro',{...intro, initial:false});
     },timeout);
-  },[initial]);
+    setTimeout(()=>{
+      onChange('intro',{...intro, initial:false, resized:true})
+    },timeout + 1000);
+  },[first]);
   return (
     <div
       className={clsx('intro')}
-      style={{height: initial ? height : height - 54}}
+      style={{height: !resized ? height : height - 54}}
     >
       <div>
        	<div className="intro__text-one">

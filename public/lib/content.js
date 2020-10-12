@@ -1,18 +1,22 @@
 export const BTS_IMAGES = [
-  'behind_the_scenes_1.jpeg',
-  'behind_the_scenes_2.jpg',
-  'behind_the_scenes_3.jpg'
+  {'path':'behind_the_scenes_1.jpeg'},
+  {'path':'behind_the_scenes_2.jpeg'},
+  {'path':'behind_the_scenes_3.jpeg'},
+  {'path':'behind_the_scenes_4.jpeg', 'portrait':true},
+  {'path':'behind_the_scenes_5.jpeg'},
+  {'path':'behind_the_scenes_6.jpeg'},
+  {'path':'behind_the_scenes_7.jpeg'},
+  {'path':'behind_the_scenes_8.jpeg'},
 ]
 
 export const AMBER_IMAGES = [
-  'amber_grace_johnson_1.jpg',
-  'amber_grace_johnson_2.jpg',
-  'amber_grace_johnson_3.png',
-  'amber_grace_johnson_4.png',
-  'amber_grace_johnson_5.png',
-  'amber_grace_johnson_6.png',
-  'amber_grace_johnson_7.png',
-  'amber_grace_johnson_8.jpg'
+  {'path':'amber_grace_johnson_1.jpg', 'portrait':true},
+  {'path':'amber_grace_johnson_2.jpg'},
+  {'path':'amber_grace_johnson_3.png'},
+  {'path':'amber_grace_johnson_4.png'},
+  {'path':'amber_grace_johnson_5.png'},
+  {'path':'amber_grace_johnson_6.png'},
+  {'path':'amber_grace_johnson_7.png'}
 ]
 
 export const PAPER_IMAGES = [

@@ -99,7 +99,7 @@ function NamedPage() {
 
   useEffect(() => {
     window.scrollTo(0, 0);
-    onIndexChange('intro',{...intro, timeout:5250})
+    onIndexChange('intro',{...intro, timeout:4250, 'first':true});
   }, []);
 
   return (
@@ -117,9 +117,9 @@ function NamedPage() {
           />
           <Text
             lineOne="In collaboration with Jung von Matt and female "
-            lineTwo="American director Amber Grace Johnson for Hyundai."
+            lineTwo="American director Amber Grace Johnson, "
+            lineThree="we’ve shot a new film for Hyundai."
             align="left"
-            viewHeight={viewHeight}
           />
           <div ref={scrollRef} style={{height: viewHeight, width:'100%'}}/>
           <Button label={clipboard.copied ? 'LINK COPIED' : 'SHARE LINK'} onClick={shareLinkClickHandler} />
@@ -136,8 +136,8 @@ function NamedPage() {
           <FullImage imageSrc='assets/images/bts/behind_the_scenes_hero.jpeg' inView={bts.displayHero} viewHeight={viewHeight} />
           <Waypoint onEnter={onBtsHeroEnter} onLeave={onBtsHeroExit} />
           <Text
-            lineOne="6 shooting days during Covid-19. Production in "
-            lineTwo="Kiev, remote-shoot in Kenya"
+            lineOne="6 shooting days during Covid-19. "
+            lineTwo="Production in Kiev, remote-shoot in Kenya."
             align="right"
             viewHeight={viewHeight}
           />
@@ -145,7 +145,7 @@ function NamedPage() {
           <div className="inset-images">
             {BTS_IMAGES.map((image,i)=>{
               return(
-                <InsetImage key={`bts-${i}`} imageSrc={`assets/images/bts/${image}`} viewHeight={viewHeight} />
+                <InsetImage key={`bts-${i}`} imageSrc={`assets/images/bts/${image.path}`} portrait={image.portrait ? true : false} viewHeight={viewHeight} />
               )
             })}
           </div>
@@ -167,7 +167,7 @@ function NamedPage() {
                   {i === 1 &&
                     <Button label="SEE AMBER’S PORTFOLIO" href="https://akkurat.tv/directors/amber-grace-johnson" target="_blank"/>
                   }
-                  <InsetImage imageSrc={`assets/images/amber/${image}`} portrait={i === 0} viewHeight={viewHeight} />
+                  <InsetImage imageSrc={`assets/images/amber/${image.path}`} portrait={image.portrait ? true : false} viewHeight={viewHeight} />
                 </React.Fragment>
               )
             })}

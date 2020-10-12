@@ -5,6 +5,7 @@ import { useViewportScroll, motion, useTransform } from "framer-motion";
 import * as indexActions from '../store/index/actions.js';
 import clsx from "clsx";
 import { useWindowSize } from 'lib/helpers.js';
+import { useClipboard } from 'use-clipboard-copy';
 
 import { Waypoint } from 'react-waypoint';
 import HeadMeta from 'components/HeadMeta';
@@ -30,13 +31,13 @@ function NamedPage() {
   const { index } = useSelector(state => state);
   const dispatch = useDispatch();
 
-  const { amber, paper, logo, video, bts } = index;
+  const { amber, paper, logo, video, bts, intro } = index;
 
   const onIndexChange = (key, value) => dispatch(indexActions.updateIndex(key, value));
 
   const scrollRef = useRef(null);
   const { scrollY } = useViewportScroll();
-  const viewHeight = use100vh();
+  const viewHeight = useWindowSize().height;
   const viewWidth = useWindowSize().width;
   const videoScrollStart = scrollRef.current ? (scrollRef.current.offsetTop - viewHeight) : 0;
   const videoScrollEnd = videoScrollStart + viewHeight;
@@ -87,8 +88,18 @@ function NamedPage() {
     onIndexChange('logo', {...logo, display: false});
   }
 
+  const clipboard = useClipboard({
+    copiedTimeout: 1500, // timeout duration in milliseconds
+  });
+
+  const shareLinkClickHandler = (e) => {
+    e.stopPropagation();
+    clipboard.copy();
+  };
+
   useEffect(() => {
-    window.scrollTo(0, 0)
+    window.scrollTo(0, 0);
+    onIndexChange('intro',{...intro, timeout:5250})
   }, []);
 
   return (
@@ -96,7 +107,7 @@ function NamedPage() {
 	  	<HeadMeta title="Akkurat x Hyundai" description="xxx" />
       <motion.div initial="hidden" animate="show" exit="hidden" variants={fadeIn}>
 	  	  <LogoStart />
-        <Intro name={name} />
+        <Intro name={name} intro={intro} onChange={onIndexChange} />
         <div className="section section--intro">
           <ParallaxVideo
             video={video}
@@ -105,7 +116,13 @@ function NamedPage() {
           />
           <Text lineOne="In collaboration with Jung von Matt and female " lineTwo="American director Amber Grace Johnson for Hyundai." align="left"/>
           <div ref={scrollRef} style={{height: viewHeight, width:'100%'}}/>
-          <Button label="SHARE LINK" />
+          <Button label={clipboard.copied ? 'LINK COPIED' : 'SHARE LINK'} onClick={shareLinkClickHandler} />
+          <input
+            style={{display:'none'}}
+            ref={clipboard.target}
+            value="ADD THE VIDEO URL HERE"
+            readOnly
+          />
           <Waypoint onEnter={onPlayEnter} onLeave={onPlayExit} bottomOffset="-200px" />
         </div>
         <div className="section section--bts">
@@ -149,7 +166,7 @@ function NamedPage() {
           <Waypoint onEnter={onPaperHeroExit} />
           <Slideshow images={PAPER_IMAGES} pathStart="assets/images/paper/" />
           <Button label="DOWNLOAD PDF" target="_blank"/>
-          <LogoEnd display={logo.display} />
+          <LogoEnd display={logo.display} intro={intro} onChange={onIndexChange} />
           <Waypoint onEnter={onLogoEnter} onLeave={onLogoExit} />
         </div>
       </motion.div>

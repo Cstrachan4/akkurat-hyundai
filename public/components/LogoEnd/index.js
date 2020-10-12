@@ -7,9 +7,16 @@ import Logo from './AKKURAT-studios.svg';
 import Button from '../Button';
 
 export default function LogoEnd({
-  display
+  display,
+  intro,
+  onChange
 }) {
-
+  const restart = () => {
+    onChange('intro',{...intro, 'initial':true, 'timeout':2000});
+    setTimeout(()=>{
+      window.scrollTo(0, 0);
+    },500);
+  }
   return (
     <>
       <Div100vh className={clsx(
@@ -18,7 +25,7 @@ export default function LogoEnd({
       )}>
         <Logo />
       </Div100vh>
-      <Button style={{opacity: display ? 1 : 0}} label="Replay"/>
+      <Button onClick={restart} style={{opacity: display ? 1 : 0}} label="Replay"/>
     </>
   )
 }

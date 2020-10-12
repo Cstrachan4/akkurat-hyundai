@@ -9,7 +9,7 @@ export default function FullImage({
   inView
 }) {
   return (
-    <Div100vh className={clsx(
+    <div className={clsx(
       'full-image',
       inView && 'full-image--display'
     )}>
@@ -20,6 +20,6 @@ export default function FullImage({
         null
       }
       </div>
-    </Div100vh>
+    </div>
   )
 }

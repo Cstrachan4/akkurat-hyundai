@@ -18,7 +18,7 @@ export default function Text({
     setDisplay(false);
   }
   return (
-    <Div100vh
+    <div
       className={clsx(
         'text',
         align && `text--${align}`,
@@ -35,6 +35,6 @@ export default function Text({
         </div>
 
       </div>
-    </Div100vh>
+    </div>
   )
 }

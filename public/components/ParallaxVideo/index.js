@@ -32,7 +32,7 @@ export default function ParallaxVideo({
   const height = width ? useTransform(width, latest => latest * 0.5625) : 0;
 
   return (
-    <Div100vh className={clsx('parallax-video')}>
+    <div className={clsx('parallax-video')}>
       <button
         className={clsx(
           'parallax-video__play',
@@ -59,6 +59,6 @@ export default function ParallaxVideo({
           progressInterval={330}
         />
       </motion.div>
-    </Div100vh>
+    </div>
   )
 }

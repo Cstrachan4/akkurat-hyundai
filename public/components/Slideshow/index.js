@@ -21,7 +21,7 @@ export default function Slideshow({
   },[activeSlide]);
 
   return (
-    <Div100vh className={clsx('slideshow')}>
+    <div className={clsx('slideshow')}>
       <div className="slideshow__images">
      	{images.map((image,i)=>{
      		return (
@@ -29,7 +29,7 @@ export default function Slideshow({
      		)
      	})}
       </div>
-    </Div100vh>
+    </div>
   )
 }
 

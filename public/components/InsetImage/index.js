@@ -10,7 +10,7 @@ export default function InsetImage({
 }) {
 
   return (
-    <Div100vh className={clsx(
+    <div className={clsx(
       'inset-image',
       portrait && 'inset-image--portrait'
     )}>
@@ -23,6 +23,6 @@ export default function InsetImage({
         :
         null
       }
-    </Div100vh>
+    </div>
   )
 }

@@ -3,7 +3,6 @@
 .button {
   position: sticky;
   top: 100vh;
-  z-index: 3;
   transition: opacity .5s $t-bezier;
   pointer-events: none;
 }
@@ -28,4 +27,5 @@
   color: map-deep-get($colours,'text-light');
   text-decoration: none;
   pointer-events: auto;
+  cursor: pointer;
 }

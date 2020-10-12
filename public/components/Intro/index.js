@@ -1,20 +1,22 @@
-import React, {useEffect,useState} from 'react';
+import React, {useEffect} from 'react';
 import './styles.scss';
 import clsx from 'clsx';
 
 import { use100vh } from 'react-div-100vh';
 
 export default function Intro({
-  name
+  name,
+  intro,
+  onChange
 }) {
-  const [initial,setInitial] = useState(true);
+  const { initial, timeout } = intro;
   const displayName =  name  ? name.replace("-", ' '): null;
   const height = use100vh();
   useEffect(()=>{
     setTimeout(()=>{
-      setInitial(false);
-    },5250);
-  },[]);
+      onChange('intro',{...intro, initial:false})
+    },timeout);
+  },[initial]);
   return (
     <div
       className={clsx('intro')}

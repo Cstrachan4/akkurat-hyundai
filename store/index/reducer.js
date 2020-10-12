@@ -1,6 +1,10 @@
 import * as actionTypes from './actionTypes.js';
 
 const INITIAL_STATE = {
+  intro: {
+    initial: true,
+    timeout: 5250
+  },
   bts: {
     displayHero: false
   },

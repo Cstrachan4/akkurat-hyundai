@@ -5,6 +5,7 @@
   top: 100vh;
   transition: opacity .5s $t-bezier;
   pointer-events: none;
+  z-index: 2;
 }
 
 .button__link-container {

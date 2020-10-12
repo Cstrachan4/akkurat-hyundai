@@ -17,7 +17,7 @@ export default function Slideshow({
       } else {
         setActiveSlide(0);
       }
-    },500);
+    },250);
   },[activeSlide]);
 
   return (

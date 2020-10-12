@@ -169,6 +169,7 @@ function NamedPage() {
           <Button label="DOWNLOAD PDF" target="_blank"/>
           <LogoEnd display={logo.display} intro={intro} onChange={onIndexChange} />
           <Waypoint onEnter={onLogoEnter} onLeave={onLogoExit} />
+          <div style={{height: viewHeight * .1, width:'100%'}}/>
         </div>
       </motion.div>
   	</React.Fragment>

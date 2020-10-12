@@ -10,6 +10,8 @@
   z-index: 1000;
   opacity: 0;
   transition: opacity .5s $t-bezier;
+  position: sticky;
+  top: 0;
   > svg {
     height: 52px;
     width: auto;

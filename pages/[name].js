@@ -134,7 +134,7 @@ function NamedPage() {
         </div>
         <div className="section section--bts">
           <FullImage imageSrc='assets/images/bts/behind_the_scenes_hero.jpeg' inView={bts.displayHero} viewHeight={viewHeight} />
-          <Waypoint onEnter={onBtsHeroEnter} onLeave={onBtsHeroExit} />
+          <Waypoint onEnter={onBtsHeroEnter} onLeave={onBtsHeroExit} bottomOffset={-viewHeight/2}/>
           <Text
             lineOne="6 shooting days during Covid-19. "
             lineTwo="Production in Kiev, remote-shoot in Kenya."
@@ -152,7 +152,7 @@ function NamedPage() {
         </div>
         <div className="section section--amber">
           <FullImage imageSrc='assets/images/amber/amber_grace_johnson_hero.jpg' inView={amber.displayHero} viewHeight={viewHeight} />
-          <Waypoint onEnter={onAmberHeroEnter} onLeave={onAmberHeroExit} />
+          <Waypoint onEnter={onAmberHeroEnter} onLeave={onAmberHeroExit} bottomOffset={-viewHeight/2}/>
           <Text
             lineOne="We’re also happy to announce that Amber is now "
             lineTwo="exclusive with us for the German Market."
@@ -178,7 +178,7 @@ function NamedPage() {
           paper.display && "section--blue"
         )}>
           <FullImage imageSrc='assets/images/paper/Paper_NEU-hero.jpg' inView={paper.displayHero} viewHeight={viewHeight} />
-          <Waypoint onEnter={onPaperEnter} onLeave={onPaperExit} />
+          <Waypoint onEnter={onPaperEnter} onLeave={onPaperExit} bottomOffset={-viewHeight/2} />
           <Text
             lineOne="Lastly, enjoy taking a look at the first "
             lineTwo="issue of our AKKURAT PAPER."

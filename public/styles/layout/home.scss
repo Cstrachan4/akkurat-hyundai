@@ -13,11 +13,13 @@ body,
 }
 
 .section--paper {
-  transition: background 1s $t-bezier;
+  transition: background 1s $t-bezier, opacity 1s $t-bezier;
+  opacity: 0;
 }
 
 .section--blue {
   background-color: map-deep-get($colours,'akkurat-blue');
+  opacity: 1;
 }
 
 .inset-images {

@@ -107,7 +107,7 @@ function NamedPage() {
 	  	<HeadMeta
         title="Akkurat x Hyundai"
         description="Director Amber Grace Johnson signs with AKKURAT Studios’ roster for representation in Germany; kicks off global Hyundai campaign in collaboration with Jung von Matt / Neckar."
-        shareImage="assets/images/Akkurat_Hyundai_Amber_Grace_Johnson.jpg"
+        shareImage="https://akkurat-hyundai.vercel.app/assets/images/Akkurat_Hyundai_Amber_Grace_Johnson.jpg"
       />
       <motion.div initial="hidden" animate="show" exit="hidden" variants={fadeIn}>
 	  	  <LogoStart viewHeight={viewHeight} />

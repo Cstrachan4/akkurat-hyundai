@@ -41,7 +41,7 @@
   },
   "scripts": {
     "dev": "next -p 3300",
-    "build": "next build && next export",
+    "build": "next build",
     "start": "next start -p $PORT",
     "storybook:react": "start-storybook -s ./public/ -c .storybook/react -p 6006",
     "build-storybook": "build-storybook"

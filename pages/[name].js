@@ -31,7 +31,7 @@ function NamedPage() {
   const { index } = useSelector(state => state);
   const dispatch = useDispatch();
 
-  const { amber, paper, logo, video, bts, intro } = index;
+  const { scroll, amber, paper, logo, video, bts, intro } = index;
 
   const onIndexChange = (key, value) => dispatch(indexActions.updateIndex(key, value));
 
@@ -88,6 +88,16 @@ function NamedPage() {
     onIndexChange('logo', {...logo, display: false});
   }
 
+  const videoReset = () => {
+    onIndexChange('video', {...video,
+      displayPlay: false,
+      controls: false,
+      url: 'assets/video/Preview.mp4',
+      preview: true,
+      muted: true
+    });
+  }
+
   const clipboard = useClipboard({
     copiedTimeout: 1500, // timeout duration in milliseconds
   });
@@ -99,8 +109,38 @@ function NamedPage() {
 
   useEffect(() => {
     window.scrollTo(0, 0);
+    onIndexChange('scroll', window.scrollY);
     onIndexChange('intro',{...intro, timeout:4250, 'first':true});
   }, []);
+
+  const onScroll = (e) => {
+    const newScroll = window.scrollY;
+    if (newScroll < scroll) {
+      if(newScroll < videoScrollEnd && !video.preview) {
+        videoReset();
+      }
+    }
+    onIndexChange('scroll', newScroll);
+  }
+
+  useEffect(() => {
+    let isScrolling;
+    const handleScroll = (e) => {
+      // console.log('scrolling');
+      onScroll(e);
+      // Clear our timeout throughout the scroll
+      window.clearTimeout(isScrolling);
+
+      // Set a timeout to run after scrolling ends
+      isScrolling = setTimeout(() => {
+        isScrolling = false;
+      }, 300);
+    }
+    window.addEventListener('scroll', handleScroll, false);
+    return () => {
+      window.removeEventListener('scroll', handleScroll, false);
+    };
+  }, [scroll]);
 
   return (
   	<React.Fragment>
@@ -130,11 +170,12 @@ function NamedPage() {
           <input
             style={{display:'none'}}
             ref={clipboard.target}
-            value="ADD THE VIDEO URL HERE"
+            value="https://akkurat.tv/directors/amber-grace-johnson/3089"
             readOnly
           />
           <Waypoint onEnter={onPlayEnter} onLeave={onPlayExit} bottomOffset="-200px" />
           <div style={{height: viewHeight, width:'100%'}}/>
+          <Waypoint onEnter={videoReset} />
         </div>
         <div className="section section--bts">
           <FullImage imageSrc='assets/images/bts/behind_the_scenes_hero.jpeg' inView={bts.displayHero} viewHeight={viewHeight} />
@@ -195,8 +236,8 @@ function NamedPage() {
             pathStart="assets/images/paper/"
             viewHeight={viewHeight}
           />
-          <Button style={{opacity: logo.display ? 0 : 1}} label="DOWNLOAD PDF" target="_blank"/>
-          <LogoEnd display={logo.display} intro={intro} onChange={onIndexChange} viewHeight={viewHeight} />
+          <Button style={{opacity: logo.display ? 0 : 1}} label="DOWNLOAD PDF" href="assets/AKKURAT_PAPER_001.pdf" download/>
+          <LogoEnd display={logo.display} intro={intro} onChange={onIndexChange} viewHeight={viewHeight} videoReset={videoReset} />
           <Waypoint onEnter={onLogoEnter} onLeave={onLogoExit} />
           <div style={{height: viewHeight * .1, width:'100%'}}/>
         </div>

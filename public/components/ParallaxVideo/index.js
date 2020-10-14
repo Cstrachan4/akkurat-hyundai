@@ -21,7 +21,7 @@ export default function ParallaxVideo({
     if(preview) {
       onChange('video', {
         ...video,
-        url:'assets/video/Full.mp4',
+        url:'https://platform.akkurat.tv/wp-content/uploads/2020/09/90s_SUPER_HYUNDAI_IONIQ_200918_4k_s.mp4',
         controls: true,
         muted: false,
         displayPlay: false,
@@ -37,7 +37,7 @@ export default function ParallaxVideo({
       <button
         className={clsx(
           'parallax-video__play',
-          displayPlay && 'parallax-video__play--display'
+          (displayPlay && preview) && 'parallax-video__play--display'
         )}
         onClick={handlePlayClick}
       >

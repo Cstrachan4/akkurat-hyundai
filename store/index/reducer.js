@@ -1,6 +1,7 @@
 import * as actionTypes from './actionTypes.js';
 
 const INITIAL_STATE = {
+  scroll: 0,
   intro: {
     initial: true,
     resized: false,

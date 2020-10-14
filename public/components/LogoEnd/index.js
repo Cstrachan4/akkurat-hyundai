@@ -10,10 +10,12 @@ import Button from '../Button';
 export default function LogoEnd({
   display,
   intro,
-  onChange
+  onChange,
+  videoReset
 }) {
   const restart = () => {
     onChange('intro',{...intro, 'initial':true, 'resized': false, 'timeout':2500, 'first':false});
+    videoReset();
     setTimeout(()=>{
       easyScroll({
         'scrollableDomEle': window,

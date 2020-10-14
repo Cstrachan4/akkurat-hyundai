@@ -3,7 +3,7 @@
 .logo-end {
   width: 100%;
   background-color: map-deep-get($colours, 'akkurat-blue');
-  display:flex;
+  display: flex;
   justify-content: center;
   align-items: center;
   position: relative;
@@ -12,6 +12,7 @@
   transition: opacity .5s $t-bezier;
   position: sticky;
   top: 0;
+  pointer-events: none;
   > svg {
     height: 52px;
     width: auto;
@@ -27,5 +28,6 @@
   }
   & + .button {
     z-index: 1001;
+    pointer-events: auto;
   }
 }

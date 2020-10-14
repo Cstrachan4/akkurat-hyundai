@@ -10,9 +10,9 @@ return(
     <FavIcon />
     <title>{ title || '' }</title>
     <meta key="description" name="description" content={description} />
-    <meta property="og:title" content={title}>
-    <meta property="og:description" content={description}>
-    <meta property="og:image" content={shareImage}>
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={shareImage} />
   </Head>
 )}
 

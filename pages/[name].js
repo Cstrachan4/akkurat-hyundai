@@ -1,5 +1,5 @@
 import { useEffect, useRef } from 'react';
-import { useRouter } from 'next/router'
+import { useRouter } from 'next/router';
 import { connect, useSelector, useDispatch } from "react-redux";
 import { useViewportScroll, motion, useTransform } from "framer-motion";
 import * as indexActions from '../store/index/actions.js';
@@ -145,7 +145,7 @@ function NamedPage() {
   return (
   	<React.Fragment>
 	  	<HeadMeta
-        title="Akkurat x Hyundai"
+        title="AKKURAT × AMBER GRACE JOHNSON × HYUNDAI"
         description="Director Amber Grace Johnson signs with AKKURAT Studios’ roster for representation in Germany; kicks off global Hyundai campaign in collaboration with Jung von Matt / Neckar."
         shareImage="https://akkurat-hyundai.vercel.app/assets/images/Akkurat_Hyundai_Amber_Grace_Johnson.jpg"
       />

@@ -19,7 +19,7 @@ return(
     <meta property="og:type" content="website" />
     <meta property="og:description" content={description} />
     <meta property="og:image" content={shareImage} />
-    <Gtag trackingId="251041961"/>
+    <Gtag trackingId="G-00WYR5N8L1"/>
   </Head>
 )}
 
